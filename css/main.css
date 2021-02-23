@@ -1,0 +1,107 @@
+:root {
+    --page1-color: steelblue;
+    --page2-color: tan;
+    --page3-color: teal;
+    --page4-color: slateblue;
+    --animate-speed: 1s;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial Rounded MT Bold", sans-serif;
+    line-height: 1.4;
+    color: white;
+    overflow: hidden;
+}
+
+#page-1 {
+    background: var(--page1-color);
+}
+
+#page-2 {
+    background: var(--page2-color);
+}
+
+#page-3 {
+    background: var(--page3-color);
+}
+
+#page-4 {
+    background: var(--page4-color);
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 4rem;
+}
+
+.page h1 {
+    font-size: 4rem;
+    line-height: 1.4rem;
+    margin: 1rem;
+}
+
+.page p {
+    font-size: 1.3rem;
+}
+
+.btn a, .btn-dark a {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #f4f4f4;
+    color: #333;
+    text-decoration: none;
+    border: none;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    transition: all 0.2s ease-in;
+}
+
+.btn a:hover,
+.btn-dark a {
+    background: #333333;
+    color: #f4f4f4;
+}
+
+.btn-dark a:hover {
+    background: #f4f4f4;
+    color: #333333;
+}
+
+.btn .fas {
+    margin-left: 4px;
+}
+
+/*Page 1 Animation*/
+
+#page-1 > h1 {
+    animation: from-top var(--animate-speed) forwards ease-in;
+    transform: translateY(-1400px);
+}
+
+@keyframes from-top {
+    to {
+        transform: translateY(0);
+    }
+}
+
+#page-1 p{
+    animation: from-left var(--animate-speed) forwards ease-in 1s;
+    transform: translateX(-1800px);
+}
+
+@keyframes from-left {
+    to {
+        transform: translateX(0);
+    }
+}
+/*Scroll Behavior, we could use JS or jQuery but not required*/
+html {
+    scroll-behavior: smooth !important;
+}
